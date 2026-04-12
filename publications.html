@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications — Tom Waterson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-style: normal; }
+    :root {
+      --bg: #0c0c0c; --border: #262626; --text: #d4d0c8;
+      --muted: #666; --accent: #5b8fa8; --link: #7aafc4;
+      --sans: 'IBM Plex Sans', sans-serif; --mono: 'IBM Plex Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 700px; margin: 0 auto; padding: 0 2rem; }
+    nav { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--border); }
+    nav .container { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; padding-bottom: 1rem; }
+    .nav-name { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.03em; text-decoration: none; }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+    .nav-links a { font-family: var(--mono); font-size: 12px; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    main { padding: 5rem 0; border-bottom: 1px solid var(--border); }
+    .section-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; margin-bottom: 2.5rem; }
+    .pub-list { list-style: none; }
+    .pub-item { padding: 1.4rem 0; border-bottom: 1px solid var(--border); }
+    .pub-item:first-child { border-top: 1px solid var(--border); }
+    .pub-title { display: block; font-size: 0.95rem; font-weight: 400; color: var(--text); text-decoration: none; margin-bottom: 0.35rem; transition: color 0.2s; }
+    .pub-title:hover { color: var(--link); }
+    .pub-authors { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.25rem; }
+    .pub-meta { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.03em; }
+    .pub-meta span + span::before { content: ' · '; }
+    footer { padding: 2.5rem 0; text-align: center; }
+    footer p { font-family: var(--mono); font-size: 11px; color: var(--border); letter-spacing: 0.06em; }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="container">
+    <a href="index.html" class="nav-name">tomwaterson.com</a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="publications.html" class="active">Publications</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<main>
+  <div class="container">
+    
+    <p class="section-label">Game Physics</p>
+    <ul class="pub-list">
+
+      <li class="pub-item">
+        <a href="https://www.youtube.com/watch?v=_jRLlTDqoGI" class="pub-title">
+          A Dive into Networked Physics-Based Character Movement
+        </a>
+        <div class="pub-authors">Tom Waterson, Markus Boberg</div>
+        <div class="pub-meta">
+          <span>Unreal Fest, Stockholm</span>
+          <span>2025</span>
+        </div>
+      </li>
+
+      <li class="pub-item">
+        <a href="https://dl.acm.org/doi/abs/10.1145/2485895.2485896" class="pub-title">
+          Rod constraints for simplified ragdolls
+        </a>
+        <div class="pub-authors">Chris Lewin, Matt Thorman, Tom Waterson, Chris Williams, Philip Willis</div>
+        <div class="pub-meta">
+          <span>SCA '13: Proceedings of the 12th ACM SIGGRAPH/Eurographics Symposium on Computer Animation</span>
+          <span>2013</span>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+  <p><br></p>
+  <div class="container">
+    
+    <p class="section-label">High Energy Physics</p>
+    <ul class="pub-list">
+
+      <li class="pub-item">
+        <a href="https://arxiv.org/abs/hep-th/0502091" class="pub-title">
+          D7 Brane Embeddings and Chiral Symmetry Breaking
+        </a>
+        <div class="pub-authors">Nick Evans, Jonathan Shock, Tom Waterson</div>
+        <div class="pub-meta">
+          <span>JHEP 0503 (2005) 005</span>
+          <span>2005</span>
+        </div>
+      </li>
+
+      <li class="pub-item">
+        <a href="https://arxiv.org/abs/hep-th/0505250" class="pub-title">
+          Towards a Perfect QCD Gravity Dual
+        </a>
+        <div class="pub-authors">Nick Evans, Jonathan Shock, Tom Waterson</div>
+        <div class="pub-meta">
+          <span>Phys.Lett. B622 (2005) 165-171</span>
+          <span>2005</span>
+        </div>
+      </li>
+
+      <li class="pub-item">
+        <a href="https://arxiv.org/abs/hep-ph/0603249" class="pub-title">Improving the Infra-red of Holographic Descriptions of QCD</a>
+        <div class="pub-authors">Nick Evans, Andrew Tedder, Tom Waterson</div>
+        <div class="pub-meta">
+          <span>JHEP 0701:058,2007</span>
+          <span>2006</span>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</main>
+<footer>
+  <div class="container"><p>Tom Waterson &mdash; tomwaterson.com</p></div>
+</footer>
+</body>
+</html>
