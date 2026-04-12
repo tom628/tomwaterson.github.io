@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tom Waterson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-style: normal; }
+    :root {
+      --bg: #0c0c0c; --border: #262626; --text: #d4d0c8;
+      --muted: #666; --accent: #5b8fa8; --link: #7aafc4;
+      --sans: 'IBM Plex Sans', sans-serif; --mono: 'IBM Plex Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column; }
+    .container { max-width: 700px; margin: 0 auto; margin-top:0; padding: 0 2rem; }
+    nav { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--border); }
+    nav .container { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; padding-bottom: 1rem; }
+    .nav-name { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.03em; text-decoration: none; }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+    .nav-links a { font-family: var(--mono); font-size: 12px; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    main { flex: 1; display: flex; align-items: center; border-bottom: 1px solid var(--border); }
+    .hero { padding: 5rem 0; }
+    .hero-name { font-family: var(--mono); font-size: clamp(1.6rem, 5vw, 2.4rem); font-weight: 500; letter-spacing: -0.01em; color: var(--text); margin-bottom: 0.5rem; }
+    .hero-role { font-family: var(--mono); font-size: clamp(0.75rem, 2vw, 0.9rem); color: var(--accent); letter-spacing: 0.06em; margin-bottom: 2rem; }
+    .hero-sub { font-size: 1rem; font-weight: 300; color: var(--muted); max-width: 500px; line-height: 1.8; }
+    footer { padding: 2.5rem 0; text-align: center; }
+    footer p { font-family: var(--mono); font-size: 11px; color: var(--border); letter-spacing: 0.06em; }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="container">
+    <a href="index.html" class="nav-name">tomwaterson.com</a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<main>
+  <div class="container">
+    <div class="hero">
+      <div class="hero-name">Tom Waterson</div>
+      <div class="hero-role">Physics Simulation Developer</div>
+      <p class="hero-sub">
+        I am a physics simulation developer currently working at Epic Games. Previously I worked at Electronic Arts on EA's internal physics engine, and I have a PhD in theoretical physics.
+        This is a personal site for hosting notes and links on physics simulation.
+      </p>
+      <br>
+      <p class="hero-sub">
+        Lately, I have been working on some <a href="notes.html">notes</a> on the foundations of position based dynamics. These show how to derive position based methods from a Lagrangian approach and are meant as a physicist's introduction to rigid body simulation. 
+      </p>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container"><p>Tom Waterson &mdash; tomwaterson.com</p></div>
+</footer>
+</body>
+</html>
