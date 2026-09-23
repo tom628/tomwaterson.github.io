@@ -3,55 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>>Foundations of Position Based Rigid Body Dynamics — Tom Waterson</title>
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Foundations of Position Based Rigid Body Dynamics" />
-  <meta property="og:description" content="Notes on the mechanics and mathematics underlying position-based rigid-body dynamics, including PBD, XPBD and related methods." />
-  <meta property="og:url" content="https://tomwaterson.com/notes.html" />
-  <meta property="og:image" content="https://tomwaterson.com/wall.png" />
-  
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Foundations of Position Based Rigid Body Dynamics" />
-  <meta name="twitter:description" content="Notes on the mechanics and mathematics underlying position-based rigid-body dynamics." />
-  <meta name="twitter:image" content="https://tomwaterson.com/wall.png" />
+
+  <title>Notes — Tom Waterson</title>
+
+  <meta name="description"
+        content="Notes and technical writing by Tom Waterson on physics simulation and rigid body dynamics." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-style: normal; }
-    :root {
-      --bg: #0c0c0c; --border: #262626; --text: #d4d0c8;
-      --muted: #666; --accent: #5b8fa8; --link: #7aafc4;
-      --sans: 'IBM Plex Sans', sans-serif; --mono: 'IBM Plex Mono', monospace;
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-style: normal;
     }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
-    .container { max-width: 700px; margin: 0; padding: 0 2rem; }
-    nav { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--border); }
-    nav .container { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; padding-bottom: 1rem; }
-    .nav-name { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.03em; text-decoration: none; }
-    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
-    .nav-links a { font-family: var(--mono); font-size: 12px; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--text); }
-    main { padding: 5rem 0; border-bottom: 1px solid var(--border); }
-    .section-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; margin-bottom: 2.5rem; }
-    .notes-list { list-style: none; }
-    .note-item { display: flex; justify-content: space-between; align-items: baseline; gap: 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
-    .note-item:first-child { border-top: 1px solid var(--border); }
-    .note-title { font-size: 0.95rem; font-weight: 400; color: var(--text); text-decoration: none; transition: color 0.2s; }
-    .note-title:hover { color: var(--link); }
-    .note-date { font-family: var(--mono); font-size: 11px; color: var(--muted); white-space: nowrap; }
-    .pub-title { display: block; font-size: 0.95rem; font-weight: 400; color: var(--text); text-decoration: none; margin-bottom: 0.35rem; transition: color 0.2s; }
-    .pub-title:hover { color: var(--link); }
-    footer { padding: 2.5rem 0; text-align: center; }
-    footer p { font-family: var(--mono); font-size: 11px; color: var(--border); letter-spacing: 0.06em; }
-    @media (max-width: 500px) { .note-item { flex-direction: column; gap: 0.2rem; } }
+
+    :root {
+      --bg: #0c0c0c;
+      --border: #262626;
+      --text: #d4d0c8;
+      --muted: #666;
+      --accent: #5b8fa8;
+      --link: #7aafc4;
+      --sans: 'IBM Plex Sans', sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0;
+      padding: 0 2rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .nav-name {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--accent);
+      letter-spacing: 0.03em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    main {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    .pub-title {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--text);
+      text-decoration: none;
+      margin-bottom: 0.35rem;
+      transition: color 0.2s;
+    }
+
+    .pub-title:hover {
+      color: var(--link);
+    }
+
+    footer {
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--border);
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 500px) {
+      .nav-links {
+        gap: 1rem;
+      }
+    }
   </style>
 </head>
+
 <body>
+
 <nav>
   <div class="container">
     <a href="index.html" class="nav-name">tomwaterson.com</a>
+
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
       <li><a href="publications.html">Publications</a></li>
@@ -60,16 +158,28 @@
     </ul>
   </div>
 </nav>
+
 <main>
   <div class="container">
-    
+
     <p class="section-label">Physics Simulation</p>
-    <a href="Foundations_of_Position_Based_Rigid_Body_Dynamics.pdf" target="_blank" class="pub-title">Foundations of Position Based Rigid Body Dynamics</a>
+
+    <a
+      href="pbd.html"
+      target="_blank"
+      rel="noopener"
+      class="pub-title">
+      Foundations of Position Based Rigid Body Dynamics
+    </a>
+
   </div>
-  
 </main>
+
 <footer>
-  <div class="container"><p>Tom Waterson &mdash; tomwaterson.com</p></div>
+  <div class="container">
+    <p>Tom Waterson &mdash; tomwaterson.com</p>
+  </div>
 </footer>
+
 </body>
 </html>
