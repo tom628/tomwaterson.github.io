@@ -45,7 +45,6 @@
       font-size: 17px;
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
-
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -137,14 +136,16 @@
       line-height: 1.8;
     }
 
-    .hero-sub a {
-      color: var(--text);
+    .hero-sub a,
+    .hero-sub a:visited {
+      color: #d4d0c8 !important;
       text-decoration: none;
       transition: color 0.2s;
     }
 
-    .hero-sub a:hover {
-      color: var(--link);
+    .hero-sub a:hover,
+    .hero-sub a:focus {
+      color: #7aafc4 !important;
     }
 
     footer {
